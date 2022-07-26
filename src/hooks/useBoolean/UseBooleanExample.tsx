@@ -1,4 +1,4 @@
-import { useBoolean } from './useBoolean';
+import { useBoolean } from './';
 
 type Props = {
   defaultValue?: boolean;

@@ -1,4 +1,11 @@
-import { UseBooleanExample, UseCounterExample } from './hooks';
+import {
+  UseBooleanExample,
+  UseClickAnyWhereExample,
+  UseCounterExample,
+  UseEventListenerExample,
+  UseIsomorphicLayoutEffectExample,
+} from './hooks';
+import * as Hooks from './hooks';
 
 export const examples = [
   {
@@ -36,5 +43,23 @@ export const examples = [
     value: 'UseCounterExample',
     title: 'UseCounterExample with defaultValue=0 and step=2',
     element: () => <UseCounterExample defaultValue={0} defaultStep={2} />,
+  },
+  {
+    id: 6,
+    value: 'UseEventListenerExample',
+    title: 'UseEventListenerExample',
+    element: () => <UseEventListenerExample />,
+  },
+  {
+    id: 7,
+    value: 'UseClickAnyWhereExample',
+    title: 'UseClickAnyWhereExample',
+    element: () => <UseClickAnyWhereExample />,
+  },
+  {
+    id: 8,
+    value: 'UseIsomorphicLayoutEffectExample',
+    title: 'UseIsomorphicLayoutEffectExample',
+    element: () => <UseIsomorphicLayoutEffectExample />,
   },
 ];

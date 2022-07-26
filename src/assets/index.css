@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1em;
+  background: #1d1e22;
+  color: #f2f2f2;
+  box-shadow: 0 2px 10px black;
+}
+
+.example {
+  padding: 1em;
+}
+
+.example:nth-of-type(2n) {
+  background-color: #e6e6e6;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+button + button {
+  margin-left: 0.5em;
+}

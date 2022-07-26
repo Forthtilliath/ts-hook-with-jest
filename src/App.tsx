@@ -19,7 +19,7 @@ const Example = ({
   element: Element,
 }: ExampleProps) => {
   return selectedOption === value ? (
-    <div>
+    <div className="example">
       <h2>{title}</h2>
       <Element />
     </div>
@@ -27,10 +27,12 @@ const Example = ({
 };
 
 const examplesValues = examples.map((e) => e.value);
-const options = Array.from(new Set(examplesValues)).map((value) => ({
-  value: value,
-  label: value,
-}));
+const options = Array.from(new Set(examplesValues))
+  .map((value) => ({
+    value: value,
+    label: value,
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -39,15 +41,19 @@ function App() {
     setSelectedOption(e.target.value);
   return (
     <div className="App">
-      <span>Sélection du custom Hook : </span>
-      <Dropdown
-        options={options}
-        selectedOption={selectedOption}
-        onChange={handleChange}
-      />
-      {examples.map(({ id, ...exampleProps }) => (
-        <Example key={id} selectedOption={selectedOption} {...exampleProps} />
-      ))}
+      <div className="header">
+        <span>Sélection du custom Hook : </span>
+        <Dropdown
+          options={options}
+          selectedOption={selectedOption}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="examples__container">
+        {examples.map(({ id, ...exampleProps }) => (
+          <Example key={id} selectedOption={selectedOption} {...exampleProps} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useCounter } from './useCounter';
+import { useCounter } from './';
 
 type Props = {
   defaultValue?: number;
